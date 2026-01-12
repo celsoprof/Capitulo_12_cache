@@ -60,7 +60,7 @@ dependencies {
     debugImplementation(libs.androidx.compose.ui.test.manifest)
 
     // Dependências do Room
-    implementation("androidx.room:room-compiler:2.8.4")
+    //implementation("androidx.room:room-compiler:2.8.4")
     implementation("androidx.room:room-runtime:2.8.4")
     kapt("androidx.room:room-compiler:2.8.4")
 
@@ -69,7 +69,5 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.11.0")
 
     // Dependências do Coil
-    // O correto tem o "3" no final do Group ID
-    implementation("io.coil-kt.coil3:coil-compose:3.3.0")
-//    implementation("io.coil-kt:coil-compose:3.3.0")
+    implementation("io.coil-kt:coil-compose:2.7.0")
 }

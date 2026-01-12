@@ -25,9 +25,21 @@ import br.com.fiap.receitasapp.ui.theme.ReceitasAppTheme
 
 class MainActivity : ComponentActivity() {
 
-    val api = RetrofitClient().getReceitaApi()
-    val dao = AppDatabase.getDatabase(this).receitaDao()
-    val repository = ReceitaRepository(api, dao)
+//    val api = RetrofitClient().getReceitaApi()
+//    val dao = AppDatabase.getDatabase(this).receitaDao()
+//    val repository = ReceitaRepository(api, dao)
+
+    private val api by lazy {
+        RetrofitClient().getReceitaApi()
+    }
+
+    private val dao by lazy {
+        AppDatabase.getDatabase(applicationContext).receitaDao()
+    }
+
+    private val repository by lazy {
+        ReceitaRepository(api, dao)
+    }
 
     private val viewModel: ReceitaViewModel by viewModels {
         ReceitaViewModelFactory(repository)
